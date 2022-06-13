@@ -50,7 +50,7 @@ class BlogPost(models.Model):
     slug=models.CharField(max_length=130)
     category=models.CharField(max_length=100,null=True)
     content=models.TextField(max_length=100,null=True)
-    summury=models.CharField(max_length=100,null=True)
+    summury=models.CharField(max_length=15,null=True)
     image = models.ImageField(upload_to="profile_pics", blank=True, null=True)
     dateTime=models.DateTimeField(auto_now_add=True)
     
