@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Blogs {% endblock %}
+{% block homeactive %} active {% endblock homeactive %}
+
+{% block css %}
+
+{% endblock %}
+{% block body %}
+<div class="container mt-5 mb-3">
+
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-lg-4 my-4">
+            <div class="card shadow" style="width: 20rem; height: 33rem;">
+                <img src="/media/{{post.image}}" class="card-img-top" alt="..." height="250px">
+                <div class="card-body">
+                <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
+                <h5 class="card-text">{{post.category}}
+                  <div class="col-md-4">
+                    <label for="category" class="form-label">Category</label>
+                         <select id="category" name="category" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>Mental Health </option>
+                            <option>Heart disease </option>
+                            <option>Covid-19 </option>
+                            <option>immunization </option>
+
+                            </select>
+                  </div>
+                </h5>
+                  <p class="card-text">{{post.content| truncatechars:210}}</p>
+                  <p class="card-text">{{post.summury| truncatechars:15}}</p>
+                  <a href="blog/{{post.slug}}" class="btn btn-primary">Read More {% if user.is_superuser %}<a href="delete_blog_post/{{post.slug}}/" class="btn btn-danger mx-4">Delete Blog</a>{% endif %}</a>
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block js %} 
+<script></script>
+{% endblock %}

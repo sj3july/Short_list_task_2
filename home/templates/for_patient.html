@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+SIGNUP OR LOGIN
+FOR PATIENTS
+{% endblock title %}
+
+
+{% block body %}
+
+<form method="POST" action="http://127.0.0.1:8000/admin/home/contact_1/add/">
+{% csrf_token %}    
+    
+
+    <div class="container-fluid 0px mx-600">
+    <img src="/static/1st.jpg" class="d-block w-100 mx-600" width="1200" height="320" alt="...">
+    <h1 class="text-center" style="
+	position: absolute;
+	top: 280px;
+	left: 2px;
+">Signup or Login Page for patients</h1>
+</div>
+
+
+
+
+    <form class="row g-3">
+        <div class="col-auto">
+            <label for="Firstname" class="visually-hidden">First Name</label>
+            <input type="text" id="Firstname" name="Firstname" placeholder="Enter your First name">
+        </div>
+
+        <div class="col-auto">
+            <label for="Lastname" class="visually-hidden">Last Name</label>
+            <input type="text" id="Lastname" name="Lastname" placeholder="Enter your Last name">
+        </div>
+
+
+
+
+        <div class="form-row field-profilepicture">
+            
+            
+            <div>
+                
+                
+                    <label class="required" for="id_profilepicture">Profile picture:</label>
+                    
+                        <input type="file" name="profilepicture" accept="image/*" required id="id_profilepicture">
+                    
+                
+                
+            </div>
+        
+    </div>
+
+        
+        </div>
+
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+        
+
+
+        <div>
+
+
+
+
+
+
+
+            <fieldset class="module aligned wide">
+              
+              
+              
+                  <div class="form-row field-username">
+                      
+                      
+                          <div>
+                              
+                              
+                                  <label class="required" for="username">Username:</label>
+                                  
+                                      <input type="text" name="username" class="vTextField" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required id="username">
+                                  
+                              
+                              
+                                  <div class="help">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</div>
+                              
+                          </div>
+                      
+                  </div>
+              
+                  <div class="form-row field-password1">
+                      
+                      
+                          <div>
+                              
+                              
+                                  <label class="required" for="id_password1">Password:</label>
+                                  
+                                      <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
+                                  
+                              
+                              
+                                  <div class="help"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></div>
+                              
+                          </div>
+                      
+                  </div>
+              
+                  <div class="form-row field-password2">
+                      
+                      
+                          <div>
+                              
+                              
+                                  <label class="required" for="id_password2">Password confirmation:</label>
+                                  
+                                      <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+                                  
+                              
+                              
+                                  <div class="help">Enter the same password as before, for verification.</div>
+                              
+                          </div>
+                      
+                  </div>
+              
+          </fieldset>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+
+
+        <div class="col-12">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St">
+        </div>
+        <div class="col-12">
+            <label for="address2" class="form-label">Address 2</label>
+            <input type="text" class="form-control" id="address2" name="address2"
+                placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="col-md-6">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-control" id="city" name="city">
+        </div>
+        <div class="col-md-4">
+            <label for="state" class="form-label">State</label>
+            <select id="state" name="state" class="form-select">
+                <option selected>Choose...</option>
+                <option>Andhra Pradesh </option>
+                <option>Arunachal Pradesh </option>
+                <option>Assam </option>
+                <option>Bihar </option>
+                <option>Chhattishgarh </option>
+                <option>Goa </option>
+                <option>Gujarat </option>
+                <option>Haryana </option>
+                <option>Himachal Pradesh </option>
+                <option>Jammu & Kashmir </option>
+                <option>Jharkhand </option>
+                <option>Karnataka </option>
+                <option>Kerala </option>
+                <option>Madhya Pradesh </option>
+                <option>Maharashtra </option>
+                <option>Manipur </option>
+                <option>Meghalaya </option>
+                <option>Mizoram </option>
+                <option>Nagaland </option>
+                <option>Odisha </option>
+                <option>Punjab </option>
+                <option>Rajasthan </option>
+                <option>Sikkim </option>
+                <option>Tamil Nadu </option>
+                <option>Telangana </option>
+                <option>Tripura </option>
+                <option>Uttar Pradesh </option>
+                <option>Uttarakhand </option>
+                <option>West Bengal </option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="zip" class="form-label">Zip</label>
+            <input type="text" class="form-control" id="zip" name="zip">
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Signup</button>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+
+
+                
+              <script id="django-admin-form-add-constants"
+              src="/static/admin/js/change_form.js"
+              
+                  data-model-name="user"
+              
+              async>
+      </script>
+  
+  
+  
+  
+  <script id="django-admin-prepopulated-fields-constants"
+          src="/static/admin/js/prepopulate_init.js"
+          data-prepopulated-fields="[]">
+  </script>
+  
+  
+  </div>
+  </form></div>
+  
+            
+            <br class="clear">
+          </div>
+          <!-- END Content -->
+          <div id="footer"></div>
+        </div>
+      </div>
+  </div>
+    </form>
+</form>
+
+{% endblock body %}
